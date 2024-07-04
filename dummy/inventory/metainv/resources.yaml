@@ -1,0 +1,389 @@
+resources:
+  metadata:
+    name: metainv
+  resourceDefs:
+    containerImages:
+      - image: cpopen/ibm-zen-operator
+        metadata:
+          name: ibmZenOperator
+          displayName: ibm-zen-operator
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:4c66e0497a40d83712f9d753920d844da0f2ba18f5f60f91cd6fe8da4c994186
+        manifests:
+          - digest: sha256:4ed22128df355daa93959890d6caaa1771c96b57daa5683b4490572ac4af9fc8
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:f65211b1c4c88bcf2f7c1418dc2cfe6727d72fba399bc121deb44e966b8758ad
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:1d2cbb7ac88be00db6a1e1b7e4094bb23cbc59f046e65ce724a81699443a1059
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/ibm-zen-operator-bundle
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        registries:
+          - host: icr.io
+        metadata:
+          name: ibmZenOperatorBundle
+          displayName: ibm-zen-operator-bundle-6.0.0
+          operators_operatorframework_io:
+            bundle:
+              mediaType: registry+v1
+              cpcicd_ibm_com:
+                targetCatalogs:
+                  catalogRefs:
+                    - ibm-public: null
+        tag: 6.0.0-333
+        digest: sha256:3e501022d058d161e5e702f48b076f3a5ad47301298c3e615114f4bb3e3e9b27
+        platform:
+          architecture: amd64
+          os: linux
+      - image: cpopen/ibm-zen-operator-catalog
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+        metadata:
+          operators_operatorframework_io:
+            catalog:
+              mediaType: "registry+v1;impl=fbc"
+        registries:
+          - host: icr.io
+        tag: 6.0.0-333
+        digest: sha256:b64f7dbb64e8fbfe01f335003f5636811356e9b64902c25a948d8efc82464a9d
+        manifests:
+          - mediaType: application/vnd.docker.distribution.manifest.v2
+            platform:
+              architecture: amd64
+              os: linux
+            tag: 6.0.0-333-amd64
+            digest: sha256:f755f4421a8003ce3ecc9e97dd6a661d5ee474fea7857428a573bc4deaf6fb96
+          - mediaType: application/vnd.docker.distribution.manifest.v2
+            platform:
+              architecture: ppc64le
+              os: linux
+            tag: 6.0.0-333-ppc64le
+            digest: sha256:7216e84e49f661db243d3230245f6d2783e7b9375563cd76dfda703e5011a303
+          - mediaType: application/vnd.docker.distribution.manifest.v2
+            platform:
+              architecture: s390x
+              os: linux
+            tag: 6.0.0-333-s390x
+            digest: sha256:23edaf19dcd9b24752ce364a9874a561b72c667c4c4478836664b5fe0ae28d81
+      - image: cpopen/cpfs/zen-watchdog
+        metadata:
+          name: zenWatchdog
+          displayName: zen-watchdog
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:d8ff26049f24832ba710006e2f36d4b08e0115199a6004f548f0832bbced931f
+        manifests:
+          - digest: sha256:affa40d1c171498f566b97b698e0f9decc79cdd50af08e3807f0b2df832ea4ff
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:b9f5a195cbafc29dfc541d30760c701e7187182c385634c0629bfb5d47c287dc
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:1ab6221e33d8fe96055e6d036288cadde7e7fe5b54645ea21af525d149ac7cc7
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/zen-utils
+        metadata:
+          name: zenUtils
+          displayName: zen-utils
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:32f880cc2988b11ce8886f4e53b220bf5f668238abaaeec239394418d2a18ae0
+        manifests:
+          - digest: sha256:8842453b3909d2f27c0d602beb26e38a1f572467a6ba381b7e97fbb23360c8a3
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:d0e44d8df94099bf0ba0cf82f60a378c159a210ac601d489247afcb1a6c684fc
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:0dab0e25485b6f8939f6d58cc7fa8d708c41c0b812ae9998039dd5700c25304e
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/zen-minio
+        metadata:
+          name: zenMinio
+          displayName: zen-minio
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:a97544f95a13a238b5b9bb39a466139fac9a7b60bc4a46ee2f91bca581c06746
+        manifests:
+          - digest: sha256:2b8decd8140225c502f74273315391c89f32ebb46c7e3d98ae8bc6f3f0c58a77
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:45d16001a78185225b0f35946e38787aec86cd184f6c7e32733696bf13b904e1
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:b03346306896fee89a74f51fa68ea104afab998ca886049cdab548104fc35298
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/zen-iam-config
+        metadata:
+          name: zenIamConfig
+          displayName: zen-iam-config
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:c72be75b0bf27e433ffb21ced513524796a24ffe1148da74d6f3461633e6ddbb
+        manifests:
+          - digest: sha256:8a4797d029fec462220db44015b72a24960f7a365ccbdc64fd032c4878a0e676
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:34dee902da7b668203b38b4493bd108c977eb030c4c25bbed40e27cbe2679f09
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:6d9f11db8b239b2ffab6de76856d824b228054eadd8899883afb64e9779eb31a
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/zen-core-api
+        metadata:
+          name: zenCoreApi
+          displayName: zen-core-api
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:fb83dbe090094d4f189603b5ea108b74703ef3796ebeeb832dab4c94c65a21c5
+        manifests:
+          - digest: sha256:0ef405029230b2f2b661fdf228cd7fa671dda1d3f0d81fba6d72911784d8d51c
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:4f64c6a75ef4e8822d133e998646c443f18d5f9d75f960733b921b192465ac0b
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:b924fad36f6db634e11a5845a1625a7a05830f0daf0b63bacb6d668adbaed930
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/zen-core
+        metadata:
+          name: zenCore
+          displayName: zen-core
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:27727151b18790fa39b53461deb9ebb8c49ac2c7594048591fa4d57951f9cd5b
+        manifests:
+          - digest: sha256:54c3dff1a0a53d0670d77d573f0d68fa02f40934eea97efac0d810a0eb845468
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:cd346a84c2cde59171f56c0277aa611aab84f5722787033337da7c20618cebf8
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:dc5073d5ad760fe023225bce189dfa4d47a799a87ab0b8704e53c312cd177ef5
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/zen-audit
+        metadata:
+          name: zenAudit
+          displayName: zen-audit
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:d064366a2090be23959fae4b6ccbce0b04d915118e171a142e8cb3dc426bff02
+        manifests:
+          - digest: sha256:447cb655c199aa12ca1cd2d50b22b579f848447b05dd4f846e76f6e97e217421
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:b03322eaeb06494756994963d38419e108b5dc98c29f6f323fa68fd3d1b89329
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:143771a96da647b122ff906ad54296c44b1a54efe5c0ef21f1484616c8c1cfbd
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/privatecloud-usermgmt
+        metadata:
+          name: privatecloudUsermgmt
+          displayName: privatecloud-usermgmt
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:e8e943ac02a8ca39fef4a50b9d8256c3a3332d2ea6fa4a97a7ae18bd65ae397a
+        manifests:
+          - digest: sha256:cf14a0a555c4f6e1dbb7f3e73235be20de2bc0b4ecd4d166098fa25ad769273b
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:397133e6e8c006b01c96657dcc77f12a37de5b3f84cc02ed22b8d50b9e3868a3
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:fc95495afba8a7c4773164f8cf199e8507c5fe0516085a214feb4a88caa9c378
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/icpd-requisite
+        metadata:
+          name: icpdRequisite
+          displayName: icpd-requisite
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:f067d2cdf58d03b9f4ef8a12bbb03e910d98d8eeaca923134368ea81c4619002
+        manifests:
+          - digest: sha256:168f2b8f01793a1ed3b5ade8375a4079ba6fcee7bfc263a61abc58b6009fa1ea
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:b8a79e2e0f200a30876fd65495e7746180d5b9b96715c1bb786611a951460d6d
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:35eb0c12f736f5fbbfd5abd96edcf43655f859e894f730ebaa7cc53702777780
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/icp4data-nginx-repo
+        metadata:
+          name: icp4dataNginxRepo
+          displayName: icp4data-nginx-repo
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:1e1912bd49d2bec2fa0cf22823993645b1dac67bc5c400cc97a5e873ce2685ee
+        manifests:
+          - digest: sha256:2ec2fa6014d60847698066935f9d42ba343d42266d1538919c2e7605a750c687
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:c362da0a86895b013ba349c168cb84b6c858db4ded17efa356ee20a71c93d021
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:257f6f659e3539293c83f7ef666d2bea06b917ff6cbb305c5c0777549c2115f8
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
+      - image: cpopen/cpfs/spoke-nginx
+        metadata:
+          name: spokeNginx
+          displayName: spoke-nginx
+        tag: 6.0.0-333
+        registries:
+          - host: icr.io
+        digest: sha256:427b9948ce0799a9271a8e6f23da77793e543a8ffdb073bfaef3fb16e3fa9e36
+        manifests:
+          - digest: sha256:74f48ae4f3575c99576bcc903c16ac1ab5ebd2a028d569c57cd742971b5ecc33
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-amd64
+            platform:
+              architecture: amd64
+              os: linux
+          - digest: sha256:7772e2f8001b2e604b406acd1596fe23d0b6828bda496e06e9f7474aeb0d84ed
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-ppc64le
+            platform:
+              architecture: ppc64le
+              os: linux
+          - digest: sha256:c9b51d590959f1a99e67ad8f02f5039b8098119f4bba28e9d8a47eafe27f94e7
+            mediaType: application/vnd.docker.distribution.manifest.v2
+            tag: 6.0.0-333-s390x
+            platform:
+              architecture: s390x
+              os: linux
+        mediaType: application/vnd.docker.distribution.manifest.list.v2
