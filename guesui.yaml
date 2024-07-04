@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guesui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: guesui
+  template:
+    metadata:
+      labels:
+        app: guesui
+    spec:
+      containers:
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guesui
+        ports:
+        - containerPort: 80
