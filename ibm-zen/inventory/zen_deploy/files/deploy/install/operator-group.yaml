@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: ibm-zen-operator-group
+  labels:
+    app.kubernetes.io/instance: ibm-zen-operator-cluster-role
+    app.kubernetes.io/managed-by: ibm-zen-operator
+    app.kubernetes.io/name: ibm-zen-operator-cluster-role
+spec:
+  targetNamespaces:
+    - REPLACE_NAMESPACE

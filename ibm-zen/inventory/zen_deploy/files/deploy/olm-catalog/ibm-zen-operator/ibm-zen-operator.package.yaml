@@ -1,0 +1,5 @@
+channels:
+  - currentCSV: ibm-zen-operator.v1.8.0
+    name: v1.0
+defaultChannel: stable-v1
+packageName: ibm-zen-operator

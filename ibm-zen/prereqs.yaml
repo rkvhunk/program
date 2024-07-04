@@ -1,0 +1,189 @@
+prereqs:
+  prereqDefs:
+    k8sDistros:
+      kubernetes:
+        distribution: kubernetes
+        semver: ">=1.14.6"
+      openshift:
+        distribution: openshift
+        semver: ">=1.14.6"
+
+    client:
+      kubectl:
+        metadata:
+          description: "Client has kubectl version 1.14.0 or greater"
+        command: "kubectl"
+        versionArgs: "version"
+        versionRegex: "GitVersion:\"v1.1[4-9].[0-9]*"
+      docker:
+        metadata:
+          description: "Client has docker version 18.0.0 or greater"
+        command: "docker"
+        versionArgs: "--version"
+        versionRegex: "Docker version 1[8-9].d*.d*"
+      podman:
+        metadata:
+          description: "Client has podman installed"
+        command: "podman"
+      oc:
+        metadata:
+          description: "Client has oc version 4.4.0 or greater"
+        command: "oc"
+        versionArgs: "version --client"
+        versionRegex: "4.[4-9]*.[0-9]*"
+      skopeo:
+        metadata:
+          description: "Client has skopeo version 0.1.41 or greater"
+        command: "skopeo"
+        versionArgs: "--version"
+        versionRegex: "skopeo version 1.d*.d*"
+    
+    k8sResourceVersions: {}
+      # catalogsource:
+        # apiGroup: operators.coreos.com
+        # kind: CatalogSource
+        # version: v1alpha1
+      # clusterrole:
+        # apiGroup: rbac.authorization.k8s.io
+        # kind: ClusterRole
+        # version: v1
+      # clusterrolebinding:
+        # apiGroup: rbac.authorization.k8s.io
+        # kind: ClusterRoleBinding
+        # version: v1
+      # clusterserviceversion:
+        # apiGroup: operators.coreos.com
+        # kind: ClusterServiceVersion
+        # version: v1alpha1
+      # cpdservice:
+        # apiGroup: metaoperator.cpd.ibm.com
+        # kind: CPDService
+        # version: v1
+      # customresourcedefinition:
+        # apiGroup: apiextensions.k8s.io
+        # kind: CustomResourceDefinition
+        # version: v1
+      # deployment:
+        # apiGroup: apps
+        # kind: Deployment
+        # version: v1
+      # operatorgroup:
+        # apiGroup: operators.coreos.com
+        # kind: OperatorGroup
+        # version: v1
+      # role:
+        # apiGroup: rbac.authorization.k8s.io
+        # kind: Role
+        # version: v1
+      # rolebinding:
+        # apiGroup: rbac.authorization.k8s.io
+        # kind: RoleBinding
+        # version: v1
+      # serviceaccount:
+        # apiGroup: ""
+        # kind: ServiceAccount
+        # version: v1
+      # subscription:
+        # apiGroup: operators.coreos.com
+        # kind: Subscription
+        # version: v1alpha1
+    k8sResources: 
+      restrictedSCC:
+        selector:
+          matchExpressions: []
+        apiGroup: security.openshift.io
+        kind: SecurityContextConstraints
+        metadata:
+          description: Namespace is using the restricted SecurityContextConstraint
+        name: restricted
+        version: v1
+      # cpdservicesMetaoperatorCpdIbmComCustomResourceDefinition:
+        # apiGroup: apiextensions.k8s.io
+        # kind: CustomResourceDefinition
+        # name: cpdservices.metaoperator.cpd.ibm.com
+        # selector: {}
+        # version: v1
+      # ibmCloudPakForDataOperatorClusterRole:
+        # apiGroup: rbac.authorization.k8s.io
+        # kind: ClusterRole
+        # name: ibm-cp-data-operator-cluster-role
+        # selector: {}
+        # version: v1
+      # ibmCloudPakForDataOperatorClusterRoleBinding:
+        # apiGroup: rbac.authorization.k8s.io
+        # kind: ClusterRoleBinding
+        # name: ibm-cp-data-operator-cluster-role-binding
+        # selector: {}
+        # version: v1
+      # ibmCloudPakForDataOperatorDeployment:
+        # apiGroup: apps
+        # kind: Deployment
+        # name: ibm-cp-data-operator
+        # selector: {}
+        # version: v1
+      # ibmCloudPakForDataOperatorGroup:
+        # apiGroup: operators.coreos.com
+        # kind: OperatorGroup
+        # name: ibm-cp-data-operator-group
+        # selector: {}
+        # version: v1
+      # ibmCloudPakForDataOperatorRole:
+        # apiGroup: rbac.authorization.k8s.io
+        # kind: Role
+        # name: ibm-cp-data-operator-role
+        # selector: {}
+        # version: v1
+      # ibmCloudPakForDataOperatorRoleBinding:
+        # apiGroup: rbac.authorization.k8s.io
+        # kind: RoleBinding
+        # name: ibm-cp-data-operator-role-binding
+        # selector: {}
+        # version: v1
+      # ibmCloudPakForDataOperatorServiceaccountServiceAccount:
+        # apiGroup: ""
+        # kind: ServiceAccount
+        # name: ibm-cp-data-operator-serviceaccount
+        # selector: {}
+        # version: v1
+      # ibmCloudPakForDataOperatorV100ClusterServiceVersion:
+        # apiGroup: operators.coreos.com
+        # kind: ClusterServiceVersion
+        # name: ibm-cp-data-operator.v1.0.0
+        # selector: {}
+        # version: v1alpha1
+      # ibmCommonServiceOperatorSubscription:
+        # apiGroup: operators.coreos.com
+        # kind: Subscription
+        # name: ibm-common-service-operator
+        # selector: {}
+        # version: v1alpha1
+      # ibmRestrictedPSP:
+        # apiGroup: policy
+        # kind: PodSecurityPolicy
+        # name: ibm-restricted-psp
+        # selector: {}
+        # version: v1beta1
+      # ibmRestrictedSCC:
+        # apiGroup: security.openshift.io
+        # kind: SecurityContextConstraints
+        # name: ibm-restricted-scc
+        # selector: {}
+        # version: v1
+      # liteCpdserviceCPDService:
+        # apiGroup: metaoperator.cpd.ibm.com
+        # kind: CPDService
+        # name: lite-cpdservice
+        # selector: {}
+        # version: v1
+      # liteCpdserviceCephCPDService:
+        # apiGroup: metaoperator.cpd.ibm.com
+        # kind: CPDService
+        # name: lite-cpdservice-ceph
+        # selector: {}
+        # version: v1
+      # opencloudOperatorsCatalogSource:
+        # apiGroup: operators.coreos.com
+        # kind: CatalogSource
+        # name: opencloud-operators
+        # selector: {}
+        # version: v1alpha1

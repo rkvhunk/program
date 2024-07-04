@@ -1,0 +1,75 @@
+resources:
+  metadata:
+    name: zen_deploy
+  resourceDefs:
+    files:
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/adm.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/cluster_role.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/cluster_role_binding.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/crds/zen.cpd.ibm.com_zenservices.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/install/catalog-source.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/install/common-services-catalog-source.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/install/common-services-subscription.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/install/operator-group.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/install/subscription.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/olm-catalog/ibm-zen-operator/6.0.0/ibm-zen-operator.clusterserviceversion.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/olm-catalog/ibm-zen-operator/6.0.0/oidc.security.ibm.com_clients.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/olm-catalog/ibm-zen-operator/6.0.0/zen.cpd.ibm.com_zenservices.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/olm-catalog/ibm-zen-operator/ibm-zen-operator.package.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/operator.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/role.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/role_binding.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: deploy/service_account.yaml
+    - mediaType: application/vnd.case.resource.script.bash.v1+launcher
+      ref: launch.sh
+    - mediaType: application/vnd.case.resource.script.bash.v1
+      ref: launch-impl.sh
+    - mediaType: application/vnd.case.resource.script.bash.v1
+      ref: airgap.sh
+    cases:
+    - case: ibm-cloud-native-postgresql
+      mediaType: application/vnd.case.core.v1
+      version: '>= 4.25.0 < 4.25.1'
+    containerImages:
+    - image: cpopen/edb/postgresql
+      tag: "14.11-4.25.0"
+      digest: sha256:5f825e253f330006144895af8a8c8cd0cc91a95937652fb094b3244302aaa469
+      mediaType: application/vnd.docker.distribution.manifest.list.v2
+      manifests:
+      - tag: "14.11-4.25.0-amd64"
+        digest: sha256:d3cb74f6614f464b0b135042c72c2a308147d2fbe513eb276c63a3fb5f63314c
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        platform:
+          architecture: amd64
+          os: linux
+      - tag: "14.11-4.25.0-ppc64le"
+        digest: sha256:dc2b8b7fff3d874aadab9f96e52b6e11229a27da5f058d783ff5700712c0dd3b
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        platform:
+          architecture: ppc64le
+          os: linux
+      - tag: "14.11-4.25.0-s390x"
+        digest: sha256:98a8dde8ee218a5d04d27bb6760e7f5accd59fd44481af18e83160e5b21b9153
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        platform:
+          architecture: s390x
+          os: linux
+      registries:
+      - host: icr.io
